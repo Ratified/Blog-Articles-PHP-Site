@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
     <link rel="stylesheet" href="styles.css">
-    <title>Edit Article</title>
+    <title>New Article</title>
 </head>
 <body>
     <main class="new edit">
-        <a href="index.html" class="newArticle">Back</a>
+        <a href="index.php" class="newArticle">Back</a>
         <form action="./includes/new.inc.php" method="post">
             <div>
                 <label for="title">Title</label>
@@ -22,7 +28,7 @@
     
             <div>
                 <label for="content">Content</label>
-                <textarea name="content" cols="30" rows="10"></textarea>
+                <textarea id="mytextarea" name="content" cols="30" rows="10"></textarea>
             </div>
 
             <div class="hasCancelSave">

@@ -8,7 +8,6 @@
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':title', $title, PDO::PARAM_STR);
     if($stmt->execute()){
-        echo "Extracted Successfully";
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
     } else{
         echo "Error";
@@ -19,6 +18,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
     <link rel="stylesheet" href="styles.css">
     <title>Edit Article</title>
 </head>
@@ -38,7 +43,7 @@
     
             <div>
                 <label for="content">Content</label>
-                <textarea name="content"><?php echo htmlspecialchars($results['content']); ?></textarea>
+                <textarea id="mytextarea" name="content"><?php echo htmlspecialchars($results['content']); ?></textarea>
             </div>
 
             <div class="hasCancelSave">

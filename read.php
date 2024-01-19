@@ -22,7 +22,7 @@
             <h2><?php echo htmlspecialchars($results->title) ?></h2>
             <p class="date"><?php echo htmlspecialchars($results->created_at) ?></p>
             <p class="description"><?php echo htmlspecialchars($results->description) ?></p>
-            <p class="content"><?php echo htmlspecialchars($results->content)?></p>
+            <p class="content"><?php $results->content ?></p>
         </div>
     </main>
 </body>
